@@ -10,10 +10,166 @@
 
     <title>PERSONA</title>
     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="login.css">
+    <style>
+      .gradient-text {
+        background-image: linear-gradient(to right, #ff9a9e, #fad0c4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: "Arial", sans-serif;
+        font-size: 36px;
+      }
+
+      .search {
+    background-color: #fff;
+    padding: 4px;
+    border-radius: 5px
+}
+
+.search-1 {
+    position: relative;
+    width: 100%
+}
+
+.search-1 input {
+    height: 45px;
+    border: none;
+    width: 100%;
+    padding-left: 34px;
+    padding-right: 10px;
+    border-right: 2px solid #eee
+}
+
+.search-1 input:focus {
+    border-color: none;
+    box-shadow: none;
+    outline: none
+}
+
+.search-1 i {
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    font-size: 24px;
+    color: #eee
+}
+
+::placeholder {
+    color: #eee;
+    opacity: 1
+}
+
+.search-2 {
+    position: relative;
+    width: 100%
+}
+
+.search-2 input {
+    height: 45px;
+    border: none;
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 100px
+}
+
+.search-2 input:focus {
+    border-color: none;
+    box-shadow: none;
+    outline: none
+}
+
+.search-2 i {
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    font-size: 24px;
+    color: #eee
+}
+
+.search-2 button {
+    position: absolute;
+    right: 1px;
+    top: 0px;
+    border: none;
+    height: 45px;
+    background-color: red;
+    color: #fff;
+    width: 90px;
+    border-radius: 4px
+}
+
+@media (max-width:800px) {
+    .search-1 input {
+        border-right: none;
+        border-bottom: 1px solid #eee
+    }
+
+    .search-2 i {
+        left: 4px
+    }
+
+    .search-2 input {
+        padding-left: 34px
+    }
+
+    .search-2 button {
+        height: 37px;
+        top: 5px
+    }
+}
+    .jumbotron {
+      background-color: #fff200;
+      padding: 50px;
+      margin-bottom: 30px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #333333;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #666666;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 12px 30px;
+    }
+    .btn-primary:hover {
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#login_card").hide();
+            $("#signup_card").hide();
+            $("#login").click(function(){
+                    $("#login_card").toggle(1000);
+                    $("#signup_card").hide();
+                });
+            $("#signup").click(function(){
+                $("#signup_card").toggle(1000);
+                $("#login_card").hide();
+            });
+            $("#login2").click(function(){
+                $("#signup_card").toggle(1000);
+                $("#login_card").hide();
+            });
+          });
+    </script>
   </head>
   <body>
     <nav class="navbar justify-content-between" style="margin-top: -30px;">
-      <a style="color: rgb(41, 215, 102);">
+      <a href="#" style="color: rgb(41, 215, 102);">
         <span style=" background: red;"></span>
         <span style=" background: red;"></span>
         <span style=" background: red;"></span>
@@ -22,7 +178,7 @@
       </a>
       <!-- Log-In, Sign-Up, and Logout Buttons -->
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <a  href="/login">
+      <a id="login" style="color: greenyellow;">
         <span></span>
         <span></span>
         <span></span>
@@ -30,7 +186,7 @@
         Log-In
       </a>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a  href="/signup">
+      <a id="signup" style="color: greenyellow;">
         <span></span>
         <span></span>
         <span></span>
@@ -39,8 +195,94 @@
       </a>
   </div>
     </nav>
+    <center><h3 class="gradient-text">Personalized Research Paper Recommendation and Email Delivery System</h3></center>
 
-    
+
+    <div id="login_card" class="login-box">
+      <h2>Login</h2>
+      <form>
+          <div class="user-box">
+              <input type="text" name="" required="">
+              <label>Username</label>
+          </div>
+          <div class="user-box">
+              <input type="password" name="" required="">
+              <label>Password</label>
+          </div>
+          <a href="#">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Login
+          </a>
+      </form>
+  </div>
+
+  <div id="signup_card" class="login-box">
+    <h2>Sign-Up</h2>
+    <form>
+        <div class="user-box">
+            <input type="text" name="" required="">
+            <label>Username</label>
+        </div>
+        <div class="user-box">
+          <input type="email" name="" required="">
+          <label>Email</label>
+      </div>
+        <div class="user-box">
+            <input type="password" name="" required="">
+            <label>Password</label>
+        </div>
+        <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Sign-Up
+        </a>
+    </form>
+</div>
+<br>
+
+<div class="container" hidden>
+  <div class="search">
+        <div>
+          <div class="search-2"> <i class='bx bxs-map'></i> <input type="text" placeholder="Enter the category your interested">
+            <button>Search</button> 
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome to PERSONA: Your Personalized Research Paper Assistant</h1>
+    <p>Are you tired of spending countless hours searching for the perfect research papers? Do you find it challenging to keep up with the latest developments in your field? Look no further! PERSONA is here to revolutionize your research process.</p>
+    <p><strong>Discover the Power of Personalized Recommendations</strong></p>
+    <p>PERSONA is an innovative research paper recommendation and email delivery system designed to make your life easier. Our cutting-edge technology utilizes advanced algorithms and artificial intelligence to analyze your research interests, preferences, and academic needs. We then curate a tailored selection of high-quality research papers that match your requirements, helping you save time and effort.</p>
+    <p><strong>Why Choose PERSONA?</strong></p>
+    <ul>
+      <li>Save Time: Say goodbye to endless browsing and scrolling through irrelevant articles. PERSONA delivers personalized recommendations directly to your inbox, allowing you to focus on what truly matters—your research.</li>
+      <li>Stay Updated: Our intelligent system keeps track of the latest publications and breakthroughs in your field. You'll receive timely notifications about groundbreaking papers, ensuring you never miss a crucial piece of information.</li>
+      <li>Expert Curation: Our team of expert researchers and scientists meticulously curates each recommendation to ensure the highest quality. We understand the importance of reliable sources in academia, and we prioritize papers from reputable journals and renowned authors.</li>
+      <li>Enhance Your Knowledge: With PERSONA, you'll expand your horizons and discover papers beyond your usual reading list. Our recommendations expose you to diverse perspectives, broadening your understanding and enriching your research.</li>
+      <li>Convenient Email Delivery: Receive your personalized research paper recommendations directly in your inbox. Our user-friendly interface makes it easy to access and manage your recommendations, allowing you to stay organized and focused.</li>
+    </ul>
+    <p><strong>How PERSONA Works</strong></p>
+    <ol>
+      <li>Create Your Profile: Begin by creating your personalized profile. Tell us about your research interests, preferred topics, and academic requirements. The more details you provide, the better we can tailor our recommendations to your needs.</li>
+      <li>Intelligent Analysis: Our powerful algorithms analyze your profile, taking into account your preferences and requirements. We consider factors such as your field of study, recent publications, and popular papers in your area of interest.</li>
+      <li>Curated Recommendations: Based on the analysis, PERSONA generates a curated list of research papers that match your unique profile. Each recommendation is carefully selected to align with your specific research goals and interests.</li>
+      <li>Email Delivery: Sit back and relax as we deliver your personalized research paper recommendations straight to your inbox. Our email notifications ensure you never miss an important paper again.</li>
+      <li>Effortless Access: Easily access your recommendations through our user-friendly interface. Sort, filter, and organize your papers for quick reference, allowing you to delve into your research with ease.</li>
+    </ol>
+    <p class="text-center">
+      <a class="btn btn-primary" id="login2" href="#signup_card">Join PERSONA Today</a>
+    </p>
+    <p class="text-center">Don't let valuable research slip through the cracks. Sign up for PERSONA now and unleash the full potential of your academic pursuits!</p>
+  </div>
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
