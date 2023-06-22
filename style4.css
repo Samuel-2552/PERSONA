@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        @charset "UTF-8";
+@charset "UTF-8";
 
         @font-face {
             font-family: "Mona Sans";
@@ -159,7 +151,7 @@
             font-family: "Mona Sans", sans-serif;
         }
 
-        body>div {
+        body>#card {
             width: var(--card-width);
             width: min(480px, var(--card-width));
             aspect-ratio: 1.5/1;
@@ -174,20 +166,20 @@
             cursor: pointer;
         }
 
-        body>div:hover>div {
+        body>#card:hover>#card {
             mix-blend-mode: darken;
             --text-color: white;
             box-shadow: 0 0 calc(var(--white-shadow) * 1vw) calc(var(--white-shadow) * 0.15vw) rgba(255, 255, 255, 0.2);
             animation: shadow-pulse calc(var(--animation-speed) * 2) linear infinite;
         }
 
-        body>div:hover>div:before {
+        body>#card:hover>#card:before {
             --bg-size: 15;
             animation-play-state: paused;
             transition: --bg-size var(--interaction-speed) ease;
         }
 
-        body>div:hover .glow {
+        body>#card:hover .glow {
             --glow-blur: 1.5;
             --glow-opacity: 0.6;
             --glow-scale: 2.5;
@@ -198,14 +190,14 @@
             animation-play-state: paused;
         }
 
-        body>div:hover .glow:after {
+        body>#card:hover .glow:after {
             --glow-translate-y: 0;
             animation-play-state: paused;
             transition: --glow-translate-y 0s ease, --glow-blur 0.05s ease, --glow-opacity 0.05s ease, --glow-scale 0.05s ease, --glow-radius 0.05s ease;
         }
 
-        body>div:before,
-        body>div:after {
+        body>#card:before,
+        body>#card:after {
             content: "";
             display: block;
             position: absolute;
@@ -214,7 +206,7 @@
             border-radius: var(--card-radius);
         }
 
-        body>div>div {
+        body>#card>#card {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -232,7 +224,7 @@
             padding: calc(var(--card-width) / 8);
         }
 
-        body>div>div span {
+        body>#card>#card span {
             display: inline-block;
             padding: 0.25em;
             border-radius: 4px;
@@ -242,7 +234,7 @@
             font-weight: 900;
         }
 
-        body>div>div:before {
+        body>#card>#card:before {
             content: "";
             display: block;
             position: absolute;
@@ -259,7 +251,7 @@
             transition: --bg-size var(--interaction-speed) ease;
         }
 
-        body>div .glow {
+        body>#card .glow {
             --glow-translate-y: 0;
             display: block;
             position: absolute;
@@ -271,7 +263,7 @@
             border-radius: calc(var(--glow-radius) * 10vw);
         }
 
-        body>div .glow:after {
+        body>#card .glow:after {
             content: "";
             display: block;
             z-index: -2;
@@ -386,28 +378,3 @@
                 --hue: 360;
             }
         }
-    </style>
-
-    <script>
-        if (typeof window.CSS.registerProperty === 'function') {
-            console.log('CSS.registerProperty supported 🎉')
-            document.body.style.setProperty('--supported', 1);
-            document.body.classList.add('registerProperty-supported')
-        } else {
-            console.log('CSS.registerProperty not supported ❌')
-            document.body.style.setProperty('--not-supported', 1);
-            document.body.classList.add('registerProperty-not-supported')
-        }
-    </script>
-</head>
-
-<body>
-    <div role="button">
-        <span class="glow"></span>
-        <div>
-            <span>Persona</span>Personalized Research Paper Recommendation and Email Delivery System
-        </div>
-    </div>
-</body>
-
-</html>
